@@ -1,0 +1,11 @@
+body {
+  background: #444;
+  color: white; }
+
+ul {
+  list-style: none; }
+
+.icons-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2%; }
