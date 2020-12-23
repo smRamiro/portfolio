@@ -4,7 +4,7 @@
   "description": "My responsive portfolio",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive --usePolling"
   },
   "author": "Ramiro Sandoval",
   "license": "ISC",
