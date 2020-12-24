@@ -45,7 +45,28 @@
     height: 100vh;
     overflow: hidden; }
   .menu-nav {
-    background-color: rgba(0, 0, 0, 0.4); }
+    background-color: #373737;
+    transform: translate(0, -100%);
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-out; }
+    .menu-nav.show {
+      transform: translate(0, 0); }
+  .menu-branding {
+    background-color: #444;
+    transform: translate(0, 100%);
+    transition: all 0.3s ease-out; }
+    .menu-branding.show {
+      transform: translate(0, 0); }
+    .menu-branding .portrait {
+      width: 40%;
+      height: 40%;
+      border-radius: 50%;
+      border: solid 3px #eeab1a; }
+      .menu-branding .portrait:hover {
+        transition: all 0.3s ease-out;
+        box-shadow: 0 0 5px white;
+        cursor: pointer; }
 
 * {
   box-sizing: border-box; }

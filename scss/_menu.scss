@@ -83,6 +83,38 @@
   }
 
   &-nav {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: darken($primary-color, 5);
+    transform: translate(0, -100%);
+    margin: 0;
+    padding: 0;
+
+    @include easeOut;
+
+    &.show {
+      transform: translate(0, 0);
+    }
+  }
+
+  &-branding {
+    background-color: $primary-color;
+    transform: translate(0, 100%);
+
+    @include easeOut;
+
+    &.show {
+      transform: translate(0, 0);
+    }
+
+    .portrait {
+      width: 40%;
+      height: 40%;
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+      &:hover {
+        @include easeOut;
+        box-shadow: 0 0 5px white;
+        cursor: pointer;
+      }
+    }
   }
 }
