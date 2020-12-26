@@ -61,7 +61,6 @@
   visibility: hidden;
   position: fixed;
   top: 0;
-  opacity: 0.9;
 
   width: 100%;
 
@@ -83,7 +82,7 @@
   }
 
   &-nav {
-    background-color: darken($primary-color, 5);
+    background-color: rgba(darken($primary-color, 5), 0.9);
     transform: translate(0, -100%);
     margin: 0;
     padding: 0;
@@ -93,10 +92,35 @@
     &.show {
       transform: translate(0, 0);
     }
+
+    .nav-item {
+      transform: translate(600px, 0);
+      @include easeOut;
+
+      &.show {
+        transform: translate(0, 0);
+      }
+    }
+
+    .nav-link {
+      display: inline-block;
+      position: relative;
+      font-size: 30px;
+      text-transform: uppercase;
+      padding: 1rem;
+      font-weight: 300;
+      color: white;
+      text-decoration: none;
+      @include easeOut;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
   }
 
   &-branding {
-    background-color: $primary-color;
+    background-color: rgba($primary-color, 0.9);
     transform: translate(0, 100%);
 
     @include easeOut;
@@ -111,10 +135,15 @@
       border-radius: 50%;
       border: solid 3px $secondary-color;
       &:hover {
-        @include easeOut;
-        box-shadow: 0 0 5px white;
         cursor: pointer;
       }
     }
+  }
+}
+
+// delay each nav item slide by 0.1s
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
   }
 }
